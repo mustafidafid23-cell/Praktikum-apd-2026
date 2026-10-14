@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="2609106031_MustafidAmirRabbani_POSTTES1_A2'26"/>
+        <attribute name="authors" value="Pongo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-11 01:31:49 AM"/>
+        <attribute name="created" value="UG9uZ287TVVTVEFGSUQ7MjAyNi0wOS0wOTsxMDowOTo1NiBQTTsyNDEz"/>
+        <attribute name="edited" value="UG9uZ287TVVTVEFGSUQ7MjAyNi0wOS0xMTswMTozMTo0OSBBTTsyOzI0OTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="JarakMeter" type="Real" array="False" size=""/>
+            <declare name="JarakKilometer" type="Real" array="False" size=""/>
+            <declare name="KapasitasTangki" type="Real" array="False" size=""/>
+            <declare name="TotalBiaya" type="Real" array="False" size=""/>
+            <declare name="Kategori" type="String" array="False" size=""/>
+            <output expression="&quot;Masukkan total Jarak tempuh.....meter&quot;" newline="True"/>
+            <input variable="JarakMeter"/>
+            <output expression="&quot;Masukkan kapasitas tangki mobil.....Liter&quot;" newline="True"/>
+            <input variable="KapasitasTangki"/>
+            <assign variable="JarakKilometer" expression="JarakMeter / 1000"/>
+            <output expression="&quot;Hasil konversi jarak tempuh: &quot; &amp; JarakKilometer &amp; &quot;km&quot;" newline="True"/>
+            <assign variable="TotalBiaya" expression="KapasitasTangki * 10000"/>
+            <output expression="&quot;Total biaya bensin: Rp&quot; &amp; TotalBiaya" newline="True"/>
+            <if expression="TotalBiaya &lt;= 150000">
+                <then>
+                    <assign variable="Kategori" expression="&quot;MobilIrit&quot;"/>
+                </then>
+                <else>
+                    <if expression="TotalBiaya &lt;= 400000">
+                        <then>
+                            <assign variable="Kategori" expression="&quot;MobilStandar&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="Kategori" expression="&quot;MobilBoros&quot;"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Status Efisiensi &quot; &amp; Kategori" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
